@@ -8,10 +8,10 @@ function App() {
   const [isLoading, setLoading] = useState(true);
   return (
     <>
-      <div className="App">hello</div>
+      <div className="App"></div>
       <Header />
       <NavBar />
-      <LandingPage />
+      <LandingPage isLoading={isLoading} setLoading={setLoading} />
     </>
   );
 }

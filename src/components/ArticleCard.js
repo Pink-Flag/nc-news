@@ -2,7 +2,16 @@ import { useState } from "react";
 import { fetchArticles } from "../api";
 
 const ArticleCard = ({ article }) => {
-  return <div className="article-card">article card</div>;
+  return (
+    <div className="article-card">
+      <h3>{article.title}</h3>
+      <h4>{article.author}</h4>
+      <p>subcategory:{article.topic}</p>
+      <p>Comments({article.comment_count})</p>
+      <p>votes: {article.votes}</p>
+      <p>created at: {article.created_at}</p>
+    </div>
+  );
 };
 
 export default ArticleCard;
