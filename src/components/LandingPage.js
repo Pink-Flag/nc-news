@@ -1,7 +1,7 @@
 import { fetchArticles } from "../api";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
-
+import { Spinner } from "react-bootstrap";
 const LandingPage = ({ isLoading, setLoading }) => {
   const [articles, setArticles] = useState([]);
 
@@ -14,7 +14,11 @@ const LandingPage = ({ isLoading, setLoading }) => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <Spinner className="spinner" animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
   }
 
   return (

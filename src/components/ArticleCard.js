@@ -3,7 +3,7 @@ import { fetchArticles } from "../api";
 
 const ArticleCard = ({ article }) => {
   return (
-    <div className="article-card">
+    <div className="ArticleCard">
       <h3>{article.title}</h3>
       <h4>{article.author}</h4>
       <p>subcategory:{article.topic}</p>

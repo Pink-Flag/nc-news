@@ -1,5 +1,14 @@
 const NavBar = () => {
-  return <header className="nav-bar">this is a nav bar</header>;
+  return (
+    <footer className="navBar">
+      <div class="navbar">
+        <a>Home</a>
+        <a>Topics</a>
+        <a>Sort</a>
+        <a>Menu</a>
+      </div>
+    </footer>
+  );
 };
 
 export default NavBar;

@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import LandingPage from "./components/LandingPage";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -10,8 +11,16 @@ function App() {
     <>
       <div className="App"></div>
       <Header />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <LandingPage isLoading={isLoading} setLoading={setLoading} />
+          }
+        />
+      </Routes>
       <NavBar />
-      <LandingPage isLoading={isLoading} setLoading={setLoading} />
     </>
   );
 }
