@@ -9,7 +9,6 @@ function Topics() {
 
   useEffect(() => {
     fetchArticlesByTopic(topic).then((articles) => {
-      console.log(articles);
       setArticlesByTopic(articles);
     });
   }, [topic]);

@@ -16,7 +16,6 @@ export const fetchTopics = () => {
     });
 };
 
-
 export const fetchArticlesByTopic = (topic) => {
   return axios
     .get(`https://trickmirror.herokuapp.com/api/articles?topic=${topic}`)
@@ -25,4 +24,18 @@ export const fetchArticlesByTopic = (topic) => {
     });
 };
 
+export const fetchArticleById = (id) => {
+  return axios
+    .get(`https://trickmirror.herokuapp.com/api/articles/${id}`)
+    .then((res) => {
+      return res.data.article;
+    });
+};
 
+export const fetchCommentsById = (id) => {
+  return axios
+    .get(`https://trickmirror.herokuapp.com/api/articles/${id}/comments`)
+    .then((res) => {
+      return res.data.comments;
+    });
+};

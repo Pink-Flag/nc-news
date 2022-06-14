@@ -22,25 +22,6 @@ function TopicsMenu() {
         );
       })}
     </div>
-
-
-function TopicsMenu() {
-  const [topics, setTopics] = useState([]);
-  useEffect(() => {
-    fetchTopics().then((topics) => {
-      console.log(topics);
-      setTopics(topics);
-    });
-  }, []);
-  return (
-    <section>
-      <ul>
-        {topics.map((topic) => {
-          return <ul>{topic.slug}</ul>;
-        })}
-      </ul>
-    </section>
-
   );
 }
 
