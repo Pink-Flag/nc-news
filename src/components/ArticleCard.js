@@ -9,13 +9,14 @@ const ArticleCard = ({ article }) => {
       <p>subcategory:{article.topic}</p>
       <p>Comments({article.comment_count})</p>
       <p>votes: {article.votes}</p>
-      <p>created at: {article.created_at}</p>
+      <p>created on: {article.created_at.split("T")[0]}</p>
     </div>
   );
 };
 
 export default ArticleCard;
 
+// example object for reference:
 // {
 //     "articles": [
 //       {
