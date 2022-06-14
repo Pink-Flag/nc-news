@@ -15,3 +15,14 @@ export const fetchTopics = () => {
       return res.data.topics;
     });
 };
+
+
+export const fetchArticlesByTopic = (topic) => {
+  return axios
+    .get(`https://trickmirror.herokuapp.com/api/articles?topic=${topic}`)
+    .then((res) => {
+      return res.data.articles;
+    });
+};
+
+
