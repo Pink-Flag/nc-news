@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { useState } from "react";
 import TopicsMenu from "./TopicsMenu";
 
@@ -18,6 +19,21 @@ const NavBar = () => {
 
         <div>Sort</div>
         <div>Menu</div>
+
+
+const NavBar = () => {
+  return (
+    <footer className="navBar">
+      <div class="navbar">
+        <a>Home</a>
+        <a>
+          <Link className="links" to="/topics">
+            Topics
+          </Link>
+        </a>
+        <a>Sort</a>
+        <a>Menu</a>
+
       </div>
     </footer>
   );
