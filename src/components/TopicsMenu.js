@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { fetchTopics } from "../api";
 
 import { Link } from "react-router-dom";
-import { BreadcrumbItem } from "react-bootstrap";
 
 function TopicsMenu() {
   const [topics, setTopics] = useState([]);

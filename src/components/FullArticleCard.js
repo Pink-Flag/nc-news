@@ -4,20 +4,21 @@ import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../api";
 import Spinner from "react-bootstrap/Spinner";
 
-function FullArticleCard({ isLoading, setLoading, setArticleVotes }) {
+function FullArticleCard({ setArticleVotes }) {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
+  const [isArticleLoading, setIsArticleLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setIsArticleLoading(true);
     fetchArticleById(article_id).then((article) => {
       setArticle(article);
       setArticleVotes(article.votes);
-      setLoading(false);
+      setIsArticleLoading(false);
     });
   }, [article_id]);
 
-  if (isLoading) {
+  if (isArticleLoading) {
     return (
       <Spinner className="spinner" animation="border" role="status">
         <span className="visually-hidden">Loading...</span>

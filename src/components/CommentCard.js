@@ -2,9 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { fetchCommentsById } from "../api";
 
-function CommentCard({ article_id, isLoading, setLoading }) {
-  const [comments, setComments] = useState([]);
-
+function CommentCard({
+  article_id,
+  setLoading,
+  submit,
+  comments,
+  setComments,
+}) {
   useEffect(() => {
     setLoading(true);
     fetchCommentsById(article_id).then((res) => {
@@ -24,7 +28,11 @@ function CommentCard({ article_id, isLoading, setLoading }) {
               {comment.created_at ? comment.created_at.split("T")[0] : null}
             </div>
             <div>{comment.body}</div>
-            <div>⬆️⬇️ {comment.votes} votes</div>
+            {comment.votes === 1 ? (
+              <div>⬆️⬇️ {comment.votes} vote</div>
+            ) : (
+              <div>⬆️⬇️ {comment.votes} votes</div>
+            )}
           </div>
         );
       })}

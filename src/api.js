@@ -49,3 +49,14 @@ export const patchVotes = (id, votes) => {
       return res.data.article;
     });
 };
+
+export const postComment = (article_id, comment) => {
+  return axios
+    .post(
+      `https://trickmirror.herokuapp.com/api/articles/${article_id}/comments`,
+      comment
+    )
+    .then((res) => {
+      return res.data.comment;
+    });
+};

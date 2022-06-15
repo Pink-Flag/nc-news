@@ -6,7 +6,6 @@ function VoteDisplay({
   article_id,
   patchVotes,
 }) {
-  console.log(articleVotes);
   const handleVote = (num) => {
     setArticleVotes(articleVotes + num);
     patchVotes(article_id, num).catch((err) => {
@@ -16,11 +15,18 @@ function VoteDisplay({
   };
 
   return (
-    <div className="voteLink">
-      <button onClick={() => handleVote(1)}>⬆️</button>
-      <button onClick={() => handleVote(-1)}>⬇️</button>
-      {articleVotes} votes
-    </div>
+    <>
+      <div className="voteLink">
+        <button onClick={() => handleVote(1)}>⬆️</button>
+        <button onClick={() => handleVote(-1)}>⬇️</button>
+
+        {articleVotes === 1 ? (
+          <>{articleVotes} vote</>
+        ) : (
+          <>{articleVotes} votes</>
+        )}
+      </div>
+    </>
   );
 }
 

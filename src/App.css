@@ -129,7 +129,7 @@ ul {
   font-size: 25px;
   letter-spacing:2px;
   margin: 0px;
-  margin-top: 9px;
+  margin-top: 20px;
   font-weight: bold;
   color: #F1FAEE;
   padding-left: 28px;
@@ -142,6 +142,15 @@ h1 {
 .links {
   text-decoration: none;
   color: antiquewhite;
+}
+
+.currUser{
+  padding:22px;
+  color: antiquewhite;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  
 }
 
 h3 {
@@ -157,6 +166,15 @@ p {
 ul {
   list-style: none;
   margin-right: 40px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-color: #457B9D;
+  border: #0a1e21;
+  margin-right: 10px;
 }
 
 
