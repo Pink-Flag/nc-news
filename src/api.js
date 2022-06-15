@@ -39,3 +39,13 @@ export const fetchCommentsById = (id) => {
       return res.data.comments;
     });
 };
+
+export const patchVotes = (id, votes) => {
+  return axios
+    .patch(`https://trickmirror.herokuapp.com/api/articles/${id}`, {
+      inc_votes: votes,
+    })
+    .then((res) => {
+      return res.data.article;
+    });
+};

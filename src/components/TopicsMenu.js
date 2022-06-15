@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchTopics } from "../api";
 
 import { Link } from "react-router-dom";
+import { BreadcrumbItem } from "react-bootstrap";
 
 function TopicsMenu() {
   const [topics, setTopics] = useState([]);
@@ -13,10 +14,10 @@ function TopicsMenu() {
   }, []);
 
   return (
-    <div className="pop-up">
+    <div className="dropup">
       {topics.map((topic) => {
         return (
-          <Link className="links" to={`/${topic.slug}`} key={topic.slug}>
+          <Link className="dropbtn" to={`/${topic.slug}`} key={topic.slug}>
             {topic.slug}
           </Link>
         );

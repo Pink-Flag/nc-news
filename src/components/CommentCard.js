@@ -1,6 +1,7 @@
 import React from "react";
 
 function CommentCard({ comment }) {
+  // add a spinner!
   return (
     <div className="CommentCard">
       <div className="articleInfo">
