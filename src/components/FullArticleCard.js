@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CommentCard from "./CommentCard";
-import { fetchArticleById, fetchCommentsById } from "../api";
+
+import { fetchArticleById } from "../api";
 import Spinner from "react-bootstrap/Spinner";
 
-function FullArticleCard({ isLoading, setLoading }) {
+function FullArticleCard({ isLoading, setLoading, setArticleVotes }) {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
-  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     fetchArticleById(article_id).then((article) => {
       setArticle(article);
-      setLoading(false);
-    });
-  }, [article_id]);
-
-  useEffect(() => {
-    setLoading(true);
-    fetchCommentsById(article_id).then((comments) => {
-      setComments(comments);
-
+      setArticleVotes(article.votes);
       setLoading(false);
     });
   }, [article_id]);
@@ -43,12 +34,6 @@ function FullArticleCard({ isLoading, setLoading }) {
       <h2>{article.title}</h2>
       <div>{article.body}</div>
       <div className="commentLink">{article.comments} comments</div>
-      <div className="voteLink">⬆️⬇️ {article.votes} votes</div>
-      <ul>
-        {comments.map((comment) => {
-          return <CommentCard comment={comment} key={comment.comment_id} />;
-        })}
-      </ul>
     </>
   );
 }
