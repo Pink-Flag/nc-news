@@ -2,13 +2,12 @@ import "./App.css";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import LandingPage from "./components/LandingPage";
-import TopicsMenu from "./components/TopicsMenu";
-import FullArticleCard from "./components/FullArticleCard";
 
 import Topics from "./components/Topics";
 
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SingleArticlePage from "./components/SingleArticlePage";
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -31,7 +30,7 @@ function App() {
         <Route
           path="/articles/:article_id"
           element={
-            <FullArticleCard isLoading={isLoading} setLoading={setLoading} />
+            <SingleArticlePage isLoading={isLoading} setLoading={setLoading} />
           }
         />
       </Routes>

@@ -6,6 +6,7 @@ function VoteDisplay({
   article_id,
   patchVotes,
 }) {
+  console.log(articleVotes);
   const handleVote = (num) => {
     setArticleVotes(articleVotes + num);
     patchVotes(article_id, num).catch((err) => {
