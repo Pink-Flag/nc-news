@@ -16,9 +16,12 @@ export const fetchTopics = () => {
     });
 };
 
-export const fetchArticlesByTopic = (topic) => {
+export const fetchArticlesByTopic = (topic, params) => {
+  console.log(params);
   return axios
-    .get(`https://trickmirror.herokuapp.com/api/articles?topic=${topic}`)
+    .get(`https://trickmirror.herokuapp.com/api/articles?topic=${topic}`, {
+      params: params,
+    })
     .then((res) => {
       return res.data.articles;
     });
