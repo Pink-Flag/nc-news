@@ -54,6 +54,7 @@ body {
 
 .header {
   display: flex;
+  z-index: 2;
   justify-content: space-between;
   background-color: #457B9D;
   position: sticky;
@@ -168,6 +169,7 @@ ul {
   margin-right: 40px;
 }
 
+
 .avatar {
   width: 50px;
   height: 50px;
@@ -175,6 +177,11 @@ ul {
   border-color: #457B9D;
   border: #0a1e21;
   margin-right: 10px;
+}
+
+.radioButton {
+  width:50px;
+  position: center
 }
 
 

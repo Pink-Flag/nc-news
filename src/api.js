@@ -1,8 +1,9 @@
 import axios from "axios";
 
-export const fetchArticles = () => {
+export const fetchArticles = (params) => {
+  console.log(params);
   return axios
-    .get("https://trickmirror.herokuapp.com/api/articles")
+    .get("https://trickmirror.herokuapp.com/api/articles", { params: params })
     .then((res) => {
       return res.data.articles;
     });

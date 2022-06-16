@@ -1,38 +1,24 @@
 import { fetchArticles } from "../api";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
-import { Spinner } from "react-bootstrap";
+import FrontPageArticles from "./FrontPageArticles";
+
+import { useSearchParams } from "react-router-dom";
 
 import SortingMenu from "./SortingMenu";
 const LandingPage = ({ isLoading, setLoading }) => {
   const [articles, setArticles] = useState([]);
 
-  useEffect(() => {
-    setLoading(true);
-    fetchArticles().then((articles) => {
-      setArticles(articles);
-      setLoading(false);
-    });
-  }, []);
-
-  if (isLoading) {
-    return (
-      <Spinner className="spinner" animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
-    );
-  }
-
   return (
     <>
       <SortingMenu />
-      <section>
-        <ul>
-          {articles.map((article) => {
-            return <ArticleCard article={article} key={article.article_id} />;
-          })}
-        </ul>
-      </section>
+      <FrontPageArticles
+        articles={articles}
+        setLoading={setLoading}
+        isLoading={isLoading}
+        setArticles={setArticles}
+        fetchArticles={fetchArticles}
+      />
     </>
   );
 };
