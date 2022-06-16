@@ -2,6 +2,8 @@ import { fetchArticles } from "../api";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import { Spinner } from "react-bootstrap";
+
+import SortingMenu from "./SortingMenu";
 const LandingPage = ({ isLoading, setLoading }) => {
   const [articles, setArticles] = useState([]);
 
@@ -22,13 +24,16 @@ const LandingPage = ({ isLoading, setLoading }) => {
   }
 
   return (
-    <section>
-      <ul>
-        {articles.map((article) => {
-          return <ArticleCard article={article} key={article.article_id} />;
-        })}
-      </ul>
-    </section>
+    <>
+      <SortingMenu />
+      <section>
+        <ul>
+          {articles.map((article) => {
+            return <ArticleCard article={article} key={article.article_id} />;
+          })}
+        </ul>
+      </section>
+    </>
   );
 };
 

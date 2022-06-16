@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { fetchArticles } from "../api";
 import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
