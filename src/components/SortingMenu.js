@@ -22,40 +22,59 @@ function SortingMenu() {
     });
   }, [radioValue]);
 
+  const radioButton = React.createRef();
+
+  const resetButton = () => {
+    setRadioValue("desc");
+  };
+
   return (
     <>
       <div>
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Sort By
+            Sorted By : {searchParams.get("sort_by")}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
             <Dropdown.Item
-              onClick={() => setSearchParams({ sort_by: "author" })}
+              onClick={() => {
+                setSearchParams({ sort_by: "author" });
+                resetButton();
+              }}
             >
               Sort by Author
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => setSearchParams({ sort_by: "votes" })}
+              onClick={() => {
+                setSearchParams({ sort_by: "votes" });
+                resetButton();
+              }}
             >
               Sort by Votes
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => setSearchParams({ sort_by: "title" })}
+              onClick={() => {
+                setSearchParams({ sort_by: "title" });
+                resetButton();
+              }}
             >
               Sort by Title
             </Dropdown.Item>
             <Dropdown.Item
-              onClick={() => setSearchParams({ sort_by: "created_at" })}
+              onClick={() => {
+                setSearchParams({ sort_by: "created_at" });
+                resetButton();
+              }}
             >
               Sort by Date
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <ButtonGroup className="radioButton">
+        <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
+              ref={radioButton}
               key={idx}
               id={`radio-${idx}`}
               type="radio"
