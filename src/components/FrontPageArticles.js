@@ -3,6 +3,7 @@ import ArticleCard from "./ArticleCard";
 import { useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
+import NotFound from "./NotFound";
 
 function FrontPageArticles({
   isLoading,
@@ -12,6 +13,9 @@ function FrontPageArticles({
   articles,
 }) {
   const [searchParams] = useSearchParams();
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
+
   const params = {
     sort_by: searchParams.get("sort_by"),
     order: searchParams.get("order"),
@@ -19,11 +23,19 @@ function FrontPageArticles({
 
   useEffect(() => {
     setLoading(true);
-    fetchArticles(params).then((articles) => {
-      setArticles(articles);
-      setLoading(false);
-    });
+    fetchArticles(params)
+      .then((articles) => {
+        setArticles(articles);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setErrorMessage(err.message);
+        setError(true);
+        setLoading(false);
+      });
   }, [searchParams]);
+
+  if (error) return <NotFound errorMessage={errorMessage} />;
 
   if (isLoading) {
     return (

@@ -3,22 +3,14 @@ import { Link } from "react-router-dom";
 import confusedWalter from "../confusedWalter.png";
 
 const NotFound = ({ errorMessage }) => {
-  useEffect(() => {
-    document.title = "NC News";
-  });
-
   return (
     <section>
       <Link to={"/"}>
-        <img
-          className="errorDog"
-          src={confusedWalter}
-          alt="error message image"
-        />
+        <img className="errorDog" src={confusedWalter} alt="error message" />
       </Link>
       <Link className="homeLink" to={"/"}>
         <div className="homeLink">
-          Something has gone wrong. <br />
+          We can't find the content you are looking for :( <br />
           Please click here to return home!
         </div>
       </Link>
