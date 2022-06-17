@@ -7,6 +7,7 @@ import Topics from "./components/Topics";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import SingleArticlePage from "./components/SingleArticlePage";
+import NotFound from "./components/NotFound";
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ function App() {
         <Header />
 
         <Routes>
+          <Route path="*" element={<NotFound />} />
           <Route
             path="/"
             element={
@@ -26,7 +28,7 @@ function App() {
             }
           />
           <Route
-            path="/:topic"
+            path="/topic/:topic"
             element={<Topics isLoading={isLoading} setLoading={setLoading} />}
           />
           <Route

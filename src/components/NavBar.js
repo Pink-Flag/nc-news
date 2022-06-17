@@ -1,28 +1,60 @@
 import { Link } from "react-router-dom";
-
+import { Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import TopicsMenu from "./TopicsMenu";
+import house from "../house.svg";
+import burger from "../burger.svg";
+import sort_down from "../sort_down.svg";
+import sort_up from "../sort_up.svg";
 
 const NavBar = () => {
-  const [popUp, setPopUp] = useState(false);
+  const [sortBy, setSortBy] = useState(true);
 
   return (
     <footer className="navBar">
       <div className="navBar">
         <Link className="links" to="/">
-          <div>Home</div>
+          <img src={house} alt="home button" className="homeIcon" />
         </Link>
         <div className="topics-menu">
-          {popUp ? <TopicsMenu /> : null}
-          <button onClick={() => setPopUp(!popUp)}>TOPICS</button>
-          {/* {popUp && TopicsMenu()} */}
-        </div>
+          <Dropdown className="btn-group dropup ">
+            <Dropdown.Toggle
+              variant="success"
+              id="dropdown-default"
+              className="btn btn-dark"
+            >
+              Topics
+            </Dropdown.Toggle>
 
-        <div>Sort</div>
-        <div>Menu</div>
+            <Dropdown.Menu className="dropUpMenu">
+              <TopicsMenu />
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+        {sortBy ? (
+          <img
+            src={sort_down}
+            onClick={() => setSortBy(!sortBy)}
+            alt="sort button"
+            className="sortIcon"
+          />
+        ) : (
+          <img
+            src={sort_up}
+            onClick={() => setSortBy(!sortBy)}
+            alt="sort button"
+            className="sortIcon"
+          />
+        )}
+
+        <img src={burger} alt="menu button" className="menuIcon" />
       </div>
     </footer>
   );
 };
 
 export default NavBar;
+
+// {popUp ? <TopicsMenu /> : null}
+// <button onClick={() => setPopUp(!popUp)}>TOPICS</button>
+// {/* {popUp && TopicsMenu()} */}

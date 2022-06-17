@@ -8,7 +8,10 @@ function Topics() {
   const [articlesByTopic, setArticlesByTopic] = useState([]);
   const [searchParams] = useSearchParams();
 
-  const params = { sort_by: searchParams.get("sort_by") };
+  const params = {
+    sort_by: searchParams.get("sort_by"),
+    order: searchParams.get("order"),
+  };
 
   const { topic } = useParams();
 

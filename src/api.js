@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const fetchArticles = () => {
+export const fetchArticles = (params) => {
   return axios
-    .get("https://trickmirror.herokuapp.com/api/articles")
+    .get("https://trickmirror.herokuapp.com/api/articles", { params: params })
     .then((res) => {
       return res.data.articles;
     });
@@ -17,7 +17,6 @@ export const fetchTopics = () => {
 };
 
 export const fetchArticlesByTopic = (topic, params) => {
-  console.log(params);
   return axios
     .get(`https://trickmirror.herokuapp.com/api/articles?topic=${topic}`, {
       params: params,
@@ -60,6 +59,15 @@ export const postComment = (article_id, comment) => {
       comment
     )
     .then((res) => {
+      return res.data.comment;
+    });
+};
+
+export const deleteComment = (comment_id) => {
+  return axios
+    .delete(`https://trickmirror.herokuapp.com/api/comments/${comment_id}`)
+    .then((res) => {
+      console.log("success");
       return res.data.comment;
     });
 };
