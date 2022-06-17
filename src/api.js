@@ -67,7 +67,6 @@ export const deleteComment = (comment_id) => {
   return axios
     .delete(`https://trickmirror.herokuapp.com/api/comments/${comment_id}`)
     .then((res) => {
-      console.log("success");
       return res.data.comment;
     });
 };
