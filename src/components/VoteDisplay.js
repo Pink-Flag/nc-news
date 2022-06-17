@@ -1,4 +1,6 @@
 import React from "react";
+import arrow_up from "../arrow_up.svg";
+import arrow_down from "../arrow_down.svg";
 
 function VoteDisplay({
   articleVotes,
@@ -17,14 +19,23 @@ function VoteDisplay({
   return (
     <>
       <div className="voteLink">
-        <button onClick={() => handleVote(1)}>⬆️</button>
-        <button onClick={() => handleVote(-1)}>⬇️</button>
+        <img
+          src={arrow_up}
+          className="votingArrows"
+          onClick={() => handleVote(1)}
+        />
+        <>{articleVotes}</>
+        <img
+          src={arrow_down}
+          className="votingArrows"
+          onClick={() => handleVote(-1)}
+        />
 
-        {articleVotes === 1 ? (
+        {/* {articleVotes === 1 ? (
           <>{articleVotes} vote</>
         ) : (
           <>{articleVotes} votes</>
-        )}
+        )} */}
       </div>
     </>
   );

@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 1fr;
   background-color: #ffffff;
+  
 }
 
 body {
   background-color: #F1FAEE;
+ 
 }
 
 .App {
@@ -13,8 +15,38 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.errorDog {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  
+}
+
+.homeLink {
+  margin-top: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  font-size: larger;
+}
+
+.topics-menu{
+
+  margin-left: 2rem;
+  color: #000000 !important;
+}
+
 .links {
   text-decoration: none;
+}
+
+.menuTopics {
+  text-transform: capitalize;
+  
 }
 
 .ArticleCard {
@@ -23,7 +55,9 @@ body {
   flex-direction: column;
   color: #0a1e21;
   border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
   margin-bottom: 20px;
+  
 }
 
 .CommentCard {
@@ -33,6 +67,7 @@ body {
   color: #0a1e21;
   border: 1px solid rgb(0, 0, 0);
   margin-bottom: 20px;
+  
 }
 
 .commentLink {
@@ -63,6 +98,29 @@ body {
 
 .deleteIcon {
   width: 2rem
+}
+
+.homeIcon {
+  width: 2.4rem;
+  margin-left: 1rem;
+  filter: invert(95%) sepia(4%) saturate(1576%) hue-rotate(178deg) brightness(107%) contrast(96%);
+}
+
+.dropUpMenu {
+  background-color: #000000;
+}
+
+.sortIcon {
+  width: 2.4rem;
+  margin-left: 2.5rem;
+  filter: invert(95%) sepia(4%) saturate(1576%) hue-rotate(178deg) brightness(107%) contrast(96%);
+}
+ 
+
+.menuIcon {
+  width: 2.5rem;
+  margin-left: 1rem;
+  filter: invert(95%) sepia(4%) saturate(1576%) hue-rotate(178deg) brightness(107%) contrast(96%);
 }
 
 .navBar { 
@@ -98,9 +156,24 @@ body {
   padding-left: 28px;
 }
 
+.voteNumber {
+  font-size: 1.2rem;
+ 
+  color: #000000;
+}
+
 h1 {
   text-align: left;
 }
+
+.votingArrows {
+  width: 2rem;
+  margin: 0.3rem;
+  background-color: #b44985;
+  border-radius: 8px;
+}
+
+
 
 .links {
   text-decoration: none;

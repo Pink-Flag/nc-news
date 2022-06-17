@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Dropdown, ButtonGroup, ToggleButton } from "react-bootstrap";
 
 function SortingMenu() {
   const [searchParams, setSearchParams] = useSearchParams({
     sort_by: "created_at",
   });
-  const [checked, setChecked] = useState(false);
+
   const [radioValue, setRadioValue] = useState("desc");
 
   const radios = [
@@ -22,7 +22,7 @@ function SortingMenu() {
     });
   }, [radioValue]);
 
-  const radioButton = React.createRef();
+  //   const radioButton = React.createRef();
 
   const resetButton = () => {
     setRadioValue("desc");
@@ -74,7 +74,7 @@ function SortingMenu() {
         <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
-              ref={radioButton}
+              //   ref={radioButton}
               key={idx}
               id={`radio-${idx}`}
               type="radio"

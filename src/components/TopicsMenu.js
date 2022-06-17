@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchTopics } from "../api";
+import { Dropdown } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -16,9 +17,14 @@ function TopicsMenu() {
     <div className="dropup">
       {topics.map((topic) => {
         return (
-          <Link className="dropbtn" to={`/${topic.slug}`} key={topic.slug}>
+          <Dropdown.Item
+            className="menuTopics"
+            as={Link}
+            to={`/topic/${topic.slug}`}
+            key={topic.slug}
+          >
             {topic.slug}
-          </Link>
+          </Dropdown.Item>
         );
       })}
     </div>
