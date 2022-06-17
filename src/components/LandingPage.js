@@ -1,9 +1,7 @@
 import { fetchArticles } from "../api";
-import { useEffect, useState } from "react";
-import ArticleCard from "./ArticleCard";
-import FrontPageArticles from "./FrontPageArticles";
+import { useState } from "react";
 
-import { useSearchParams } from "react-router-dom";
+import FrontPageArticles from "./FrontPageArticles";
 
 import SortingMenu from "./SortingMenu";
 const LandingPage = ({ isLoading, setLoading }) => {

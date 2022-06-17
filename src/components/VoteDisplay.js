@@ -11,7 +11,7 @@ function VoteDisplay({
   const handleVote = (num) => {
     setArticleVotes(articleVotes + num);
     patchVotes(article_id, num).catch((err) => {
-      alert("something has gone wrong! please try again");
+      alert("something has gone wrong with your vote! please try again");
       setArticleVotes(articleVotes - num);
     });
   };
@@ -23,19 +23,15 @@ function VoteDisplay({
           src={arrow_up}
           className="votingArrows"
           onClick={() => handleVote(1)}
+          alt="upvote"
         />
         <>{articleVotes}</>
         <img
           src={arrow_down}
           className="votingArrows"
           onClick={() => handleVote(-1)}
+          alt="downvote"
         />
-
-        {/* {articleVotes === 1 ? (
-          <>{articleVotes} vote</>
-        ) : (
-          <>{articleVotes} votes</>
-        )} */}
       </div>
     </>
   );

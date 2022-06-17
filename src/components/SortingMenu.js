@@ -22,8 +22,6 @@ function SortingMenu() {
     });
   }, [radioValue]);
 
-  //   const radioButton = React.createRef();
-
   const resetButton = () => {
     setRadioValue("desc");
   };

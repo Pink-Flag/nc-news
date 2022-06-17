@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { fetchCommentsById } from "../api";
 import trash from "../trash.svg";
+import NotFound from "./NotFound";
 
 import { deleteComment } from "../api";
 
@@ -13,27 +14,43 @@ function CommentCard({
   setComments,
 }) {
   const [deletedComment, setDeletedComment] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetchCommentsById(article_id).then((res) => {
-      setComments(res);
+    fetchCommentsById(article_id)
+      .then((res) => {
+        setComments(res);
 
-      setLoading(false);
-    });
+        setLoading(false);
+      })
+      .catch((err) => {
+        setErrorMessage(err.message);
+        setError(true);
+        setLoading(false);
+      });
   }, [article_id, deletedComment, submit]);
 
   const handleDelete = (comment_id) => {
     setLoading(true);
-    deleteComment(comment_id).then((res) => {
-      setDeletedComment(deletedComment + 1);
-      setLoading(false);
-    });
+    deleteComment(comment_id)
+      .then((res) => {
+        setDeletedComment(deletedComment + 1);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert(
+          "something has gone wrong, please try deleting your comment again!"
+        );
+      });
   };
 
   const sortedComments = [...comments].sort((a, b) => {
     return new Date(b.created_at) - new Date(a.created_at);
   });
+
+  if (error) return <NotFound errorMessage={errorMessage} />;
 
   return (
     <>
