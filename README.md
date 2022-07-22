@@ -6,7 +6,7 @@ The front end has been created with React, Javascript and Bootstrap. It requires
 
 https://effortless-nasturtium-3b510c.netlify.app/
 
-The back end has been created with Node.js and Express. The data is stored with PostgreSQL and the API is hosted via Heroku:
+The back end has been created with Node.js and Express. The data is stored with PostgreSQL and the API is hosted via Heroku (mobile view only):
 
 https://trickmirror.herokuapp.com/api
 
