@@ -20,7 +20,3 @@ const NotFound = ({ errorMessage }) => {
 };
 
 export default NotFound;
-
-//   <Link className="links" to="/">
-//           <img src={house} alt="home button" className="homeIcon" />
-//         </Link>

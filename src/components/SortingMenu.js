@@ -72,7 +72,6 @@ function SortingMenu() {
         <ButtonGroup>
           {radios.map((radio, idx) => (
             <ToggleButton
-              //   ref={radioButton}
               key={idx}
               id={`radio-${idx}`}
               type="radio"
