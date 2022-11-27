@@ -54,7 +54,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-// {popUp ? <TopicsMenu /> : null}
-// <button onClick={() => setPopUp(!popUp)}>TOPICS</button>
-// {/* {popUp && TopicsMenu()} */}

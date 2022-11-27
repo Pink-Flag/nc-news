@@ -14,16 +14,3 @@ const ArticleCard = ({ article }) => {
 };
 
 export default ArticleCard;
-
-// example object for reference:
-// {
-//     "articles": [
-//       {
-//         "author": "Paul Grump",
-//         "title": "The Notorious MSG’s Unlikely Formula For Success",
-//         "article_id": 34,
-//         "topic": "cooking",
-//         "created_at": "2020-11-22T11:13:00.000Z",
-//         "votes": 0,
-//         "comment_count": 300
-//       }]}

@@ -64,7 +64,6 @@ function CommentCard({
             type="button"
             className="close"
             onClick={() => setDeletedComment(0)}
-            // data-dismiss="alert"
             aria-label="Close"
           >
             <span aria-hidden="true">&times;</span>
