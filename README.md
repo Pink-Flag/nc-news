@@ -2,13 +2,13 @@
 
 This is version of a social news aggregator website such as Reddit.
 
-The front end has been created with React, Javascript and Bootstrap. It requires at least Node Version 16.15.0 to run locally and is hosted here:
+The front end has been created with React, Javascript and Bootstrap. It requires at least Node Version 16.15.0 to run locally and is hosted here (mobile view only):
 
 https://effortless-nasturtium-3b510c.netlify.app/
 
-The back end has been created with Node.js and Express. The data is stored with PostgreSQL and the API is hosted via Heroku (mobile view only):
+The back end has been created with Node.js and Express. The data is stored with PostgreSQL and the API is hosted via ElephantSQL and Cyclic:
 
-https://trickmirror.herokuapp.com/api
+https://encouraging-dog-pleat.cyclic.app/api
 
 The github repository for the API can be viewed here:
 
